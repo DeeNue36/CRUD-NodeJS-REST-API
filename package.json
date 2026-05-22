@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-crud-api-project",
+  "version": "1.0.0",
+  "description": "Creating a CRUD Rest API with vanilla NodeJS",
+  "license": "ISC",
+  "author": "DeeNue36",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
