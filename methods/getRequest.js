@@ -15,6 +15,20 @@ module.exports = (req, res) => {
         res.writeHead(400, {"Content-Type": "application/json"});
         res.end(JSON.stringify({"title": "Bad Request","message": "UUID Not Found!!"}));
     }
+    else if (regexV4.text(id)) {
+        res.setHeader("Content-Type", "application/json");
+        
+        let filteredMovie = req.movies.filter((movie) => {
+            return movie.id === id;
+        })
+        
+        if (filteredMovie.length > 0) {
+            res.statusCode = 200;
+            res.write(JSON.stringify(filteredMovie));
+            res.end();
+        }
+        // res.write(JSON.stringify(req.movies[id]));
+    }
     else {
         res.writeHead(404, {"Content-Type": "application/json"});
         res.end(JSON.stringify({"title": "Not Found","message": "Route Not Found!!"}));
