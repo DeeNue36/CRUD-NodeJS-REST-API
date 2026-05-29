@@ -16,7 +16,7 @@ module.exports = (req, res) => {
         res.writeHead(400, {"Content-Type": "application/json"});
         res.end(JSON.stringify({"title": "Bad Request","message": "UUID Not Found!!"}));
     }
-    else if (regexV4.test(id)) {
+    else if (baseUrl === '/api/movies/' && regexV4.test(id)) {
         res.setHeader("Content-Type", "application/json");
         let filteredMovie = req.movies.filter((movie) => {
             return movie.id === id;
