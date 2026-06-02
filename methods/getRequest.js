@@ -27,7 +27,7 @@ module.exports = (req, res) => {
             // res.write(JSON.stringify(req.movies[id]));
             res.end();
         } else {
-            res.writeHead(404, {"Content-Type": "application/json"});
+            res.statusCode = 404;
             res.write(JSON.stringify({"title": "Not Found","message": "Movie Not Found!!"}));
             res.end();
         }
