@@ -22,7 +22,7 @@ module.exports = (req, res) => {
             writeToFile(req.movies);
             res.writeHead(204, {"Content-Type": "application/json"});
             res.end(JSON.stringify(req.movies));
-            // res.end();
+            // OR res.end();
         }
     }
 };
